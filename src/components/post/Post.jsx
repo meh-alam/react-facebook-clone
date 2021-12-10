@@ -1,29 +1,30 @@
 import "./post.css";
 import MoreVert from '@mui/icons-material/MoreVert'
+import {Users} from '../../dummyData'
 
-export default function Post() {
+export default function Post({post}) {
   return (
     <div className="post">
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
             <img
-            //   className="postProfileImg"
-            //   src={Users.filter((u) => u.id === post?.userId)[0].profilePicture}
+              className="postProfileImg"
+              src={Users.filter((u) => u.id === post?.userId)[0].profilePicture}
               alt=""
             />
             <span className="postUsername">
-              {/* {Users.filter((u) => u.id === post?.userId)[0].username} */}
+              {Users.filter((u) => u.id === post?.userId)[0].username}
             </span>
-            <span className="postDate"></span>
+            <span className="postDate">{post.date}</span>
           </div>
           <div className="postTopRight">
             <MoreVert />
           </div>
         </div>
         <div className="postCenter">
-          <span className="postText"></span>
-          <img className="postImg" src='' alt="" />
+          <span className="postText">{post?.desc}</span>
+          <img className="postImg" src={post.photo} alt="" />
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
@@ -37,10 +38,10 @@ export default function Post() {
               src="assets/heart.png"
               alt=""
             />
-            <span className="postLikeCounter"> people like it</span>
+            <span className="postLikeCounter">{post.like} people like it</span>
           </div>
           <div className="postBottomRight">
-            <span className="postCommentText">comments</span>
+            <span className="postCommentText">{post.comment} {post.comment > 1 ? 'comments':'comment'}</span>
           </div>
         </div>
       </div>

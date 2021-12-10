@@ -8,6 +8,8 @@ import HelpOutline from "@mui/icons-material/HelpOutline";
 import School from "@mui/icons-material/School";
 import WorkOutline from "@mui/icons-material/WorkOutline";
 import Event from "@mui/icons-material/Event";
+import CloseFriend from '../../components/closefriend/CloseFriend'
+import {Users} from '../../dummyData'
 
 
 export default function LeftBar() {
@@ -54,11 +56,11 @@ export default function LeftBar() {
         </ul>
         <button className="left-bar-button">Show More</button>
         <hr className="left-bar-hr" />
-        {/* <ul className="left-bar-friend-list">
+        <ul className="left-bar-friend-list">
           {Users.map((u) => (
             <CloseFriend key={u.id} user={u} />
           ))}
-        </ul> */}
+        </ul>
       </div>
     </div>
   );
